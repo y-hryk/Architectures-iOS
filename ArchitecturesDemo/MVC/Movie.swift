@@ -8,6 +8,10 @@
 
 import UIKit
 
-class Movie: NSObject {
-
+struct Movie {
+    
+    let id              : String
+    let title           : String
+    let backdrop_path   : String
+    let vote_average    : Float
 }

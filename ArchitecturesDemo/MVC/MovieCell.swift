@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  MovieCell.swift
 //  ArchitecturesDemo
 //
 //  Created by h.yamaguchi on 2017/01/10.
@@ -8,6 +8,7 @@
 
 import UIKit
 
-class Movie: NSObject {
-
+class MovieCell: UICollectionViewCell {
+    
+    
 }

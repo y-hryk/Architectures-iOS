@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.setupViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +23,13 @@ class ViewController: UIViewController {
     }
 
 
+    func setupViews() {
+        
+    }
+    
+    private func fetchData(completion: (() -> Void)?) {
+        self.setupViews()
+        completion?()
+    }
 }
 
