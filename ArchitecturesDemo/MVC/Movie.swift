@@ -8,10 +8,11 @@
 
 import UIKit
 
-struct Movie {
+class Movie: Debuggable {
     
-    let id              : String
-    let title           : String
-    let backdrop_path   : String
-    let vote_average    : Float
+    var id              : String = ""
+    var title           : String = ""
+    var backdrop_path   : String = ""
+    var vote_average    : Float  = 0.0
+    
 }

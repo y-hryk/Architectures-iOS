@@ -12,6 +12,11 @@
 		A7AB36911E12B9C8004ACE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36901E12B9C8004ACE8B /* Assets.xcassets */; };
 		A7AB36941E12B9C8004ACE8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */; };
 		A7AB369F1E12B9C8004ACE8B /* ArchitecturesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB369E1E12B9C8004ACE8B /* ArchitecturesDemoTests.swift */; };
+		A7D12FE11E2CA0A600390CA8 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */; };
+		A7D12FE21E2CA0A600390CA8 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7D12FE71E2CAB7900390CA8 /* Debuggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */; };
+		A7D12FEA1E2CAB9E00390CA8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE91E2CAB9E00390CA8 /* Color.swift */; };
+		A7D12FEC1E2CBDE300390CA8 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */; };
 		A7F490151E24C6020058B551 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490141E24C6020058B551 /* APIConfig.swift */; };
 		A7F4901D1E24CA360058B551 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901C1E24CA360058B551 /* Movie.swift */; };
 		A7F4901F1E24E9640058B551 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901E1E24E9640058B551 /* Controller.swift */; };
@@ -29,6 +34,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A7D12FE31E2CA0A600390CA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7D12FE21E2CA0A600390CA8 /* Kingfisher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A7AB36861E12B9C8004ACE8B /* ArchitecturesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitecturesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +58,10 @@
 		A7AB369A1E12B9C8004ACE8B /* ArchitecturesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitecturesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AB369E1E12B9C8004ACE8B /* ArchitecturesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitecturesDemoTests.swift; sourceTree = "<group>"; };
 		A7AB36A01E12B9C8004ACE8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debuggable.swift; sourceTree = "<group>"; };
+		A7D12FE91E2CAB9E00390CA8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		A7F490141E24C6020058B551 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		A7F4901C1E24CA360058B551 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A7F4901E1E24E9640058B551 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -51,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D12FE11E2CA0A600390CA8 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +91,7 @@
 		A7AB367D1E12B9C7004ACE8B = {
 			isa = PBXGroup;
 			children = (
+				A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */,
 				A7AB36881E12B9C8004ACE8B /* ArchitecturesDemo */,
 				A7AB369D1E12B9C8004ACE8B /* ArchitecturesDemoTests */,
 				A7AB36871E12B9C8004ACE8B /* Products */,
@@ -88,6 +113,9 @@
 				A7F490141E24C6020058B551 /* APIConfig.swift */,
 				A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */,
 				A7AB368B1E12B9C8004ACE8B /* ViewController.swift */,
+				A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */,
+				A7D12FE81E2CAB8B00390CA8 /* Extensions */,
+				A7D12FE51E2CAB7900390CA8 /* Protocols */,
 				A7F4901B1E24CA360058B551 /* MVC */,
 				A7AB36901E12B9C8004ACE8B /* Assets.xcassets */,
 				A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */,
@@ -103,6 +131,22 @@
 				A7AB36A01E12B9C8004ACE8B /* Info.plist */,
 			);
 			path = ArchitecturesDemoTests;
+			sourceTree = "<group>";
+		};
+		A7D12FE51E2CAB7900390CA8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A7D12FE81E2CAB8B00390CA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7D12FE91E2CAB9E00390CA8 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A7F4901B1E24CA360058B551 /* MVC */ = {
@@ -126,6 +170,8 @@
 				A7AB36821E12B9C7004ACE8B /* Sources */,
 				A7AB36831E12B9C7004ACE8B /* Frameworks */,
 				A7AB36841E12B9C7004ACE8B /* Resources */,
+				A7D12FE31E2CA0A600390CA8 /* Embed Frameworks */,
+				A7D12FE41E2CA0BE00390CA8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -214,6 +260,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A7D12FE41E2CA0BE00390CA8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7AB36821E12B9C7004ACE8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,8 +287,11 @@
 				A7AB368C1E12B9C8004ACE8B /* ViewController.swift in Sources */,
 				A7F490211E251AA00058B551 /* SwitchVC.swift in Sources */,
 				A7AB368A1E12B9C8004ACE8B /* AppDelegate.swift in Sources */,
+				A7D12FE71E2CAB7900390CA8 /* Debuggable.swift in Sources */,
 				A7F4901D1E24CA360058B551 /* Movie.swift in Sources */,
 				A7F490151E24C6020058B551 /* APIConfig.swift in Sources */,
+				A7D12FEA1E2CAB9E00390CA8 /* Color.swift in Sources */,
+				A7D12FEC1E2CBDE300390CA8 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +421,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 853S365UM8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ArchitecturesDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -369,6 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 853S365UM8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ArchitecturesDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
