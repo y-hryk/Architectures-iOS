@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.black
         
+        UINavigationBar.appearance().barTintColor = UIColor.baseColor()
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
+        
         let vc = SwitchVC.mainController()
         let navi = UINavigationController(rootViewController: vc)
         

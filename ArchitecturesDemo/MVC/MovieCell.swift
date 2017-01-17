@@ -52,12 +52,25 @@ class MovieCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Private
     fileprivate func setupViews() {
         
         self.contentView.addSubview(self.thumbnaliImage)
         self.contentView.addSubview(self.gradientView)
         self.contentView.addSubview(self.titleLabel)
         self.contentView.addSubview(self.scoreLabel)
+        
+        gradientView.frame = CGRect(x: 0, y: self.frame.size.height - 120, width: self.frame.size.width, height: 120)
+        UIColor.gradientStartColor(startColor: UIColor.RGBA(0, 0, 0, 0.0),
+                                   endColor: UIColor.RGBA(0, 0, 0, 1.0),
+                                   view: self.gradientView,
+                                   type: .angle0)
+        
+        // 制約を設定
+        self.setupConstrains()
+    }
+    
+    fileprivate func setupConstrains() {
         
         self.thumbnaliImage.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints([
@@ -82,15 +95,9 @@ class MovieCell: UICollectionViewCell {
             NSLayoutConstraint(item: self.scoreLabel, attribute: .height,   relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1.0, constant: 70),
             NSLayoutConstraint(item: self.scoreLabel, attribute: .width,   relatedBy: .equal, toItem: nil, attribute: .width,  multiplier: 1.0, constant: 70)
         ])
-
-        
-        gradientView.frame = CGRect(x: 0, y: self.frame.size.height - 120, width: self.frame.size.width, height: 120)
-        UIColor.gradientStartColor(startColor: UIColor.RGBA(0, 0, 0, 0.0),
-                                   endColor: UIColor.RGBA(0, 0, 0, 1.0),
-                                   view: self.gradientView,
-                                   type: .angle0)
     }
     
+    // MARK: Public
     func setRowData(datas: [Movie], indexPath: IndexPath) {
 
         if datas.isEmpty { return }
@@ -113,4 +120,5 @@ class MovieCell: UICollectionViewCell {
 
         }
     }
+    
 }

@@ -56,4 +56,8 @@ extension UIColor {
         
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    class func baseColor() -> UIColor {
+        return UIColor.RGB(33, 33, 33)
+    }
 }

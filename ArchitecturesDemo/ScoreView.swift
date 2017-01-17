@@ -44,21 +44,7 @@ class ScoreView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.addSubview(self.scoreLabel)
-        
-        self.scoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addConstraints([
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX ,multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY ,multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .top,   relatedBy: .equal, toItem: self, attribute: .top,  multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .bottom,   relatedBy: .equal, toItem: self, attribute: .bottom,  multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .leading,   relatedBy: .equal, toItem: self, attribute: .leading,  multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .trailing,   relatedBy: .equal, toItem: self, attribute: .trailing,  multiplier: 1.0, constant: 0)
-        ])
-    
-        self.layer.addSublayer(self.graphMaxShapeLayer)
-        self.layer.addSublayer(self.graphCurrentShapeLayer)
+        self.setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,11 +54,26 @@ class ScoreView: UIView {
     fileprivate func setupViews() {
         
         self.addSubview(self.scoreLabel)
+        
+        self.layer.addSublayer(self.graphMaxShapeLayer)
+        self.layer.addSublayer(self.graphCurrentShapeLayer)
+        
+        self.setupConstraints()
     }
     
+    fileprivate func setupConstraints() {
+        self.scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addConstraints([
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX ,multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY ,multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .top,   relatedBy: .equal, toItem: self, attribute: .top,  multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .bottom,   relatedBy: .equal, toItem: self, attribute: .bottom,  multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .leading,   relatedBy: .equal, toItem: self, attribute: .leading,  multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .trailing,   relatedBy: .equal, toItem: self, attribute: .trailing,  multiplier: 1.0, constant: 0)
+        ])
+    }
     
     // MARK: Public
-    
     func startAnimation(score: Float) {
         
         self.currentScore = score
@@ -98,9 +99,8 @@ class ScoreView: UIView {
         CATransaction.commit()
     }
     
-    // MARK: Over ride
+    // MARK: Override
     override func layoutSubviews() {
-        super.layoutSubviews()
         
         let center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
         let radius = self.frame.size.width / 2.0
@@ -113,5 +113,7 @@ class ScoreView: UIView {
         let current_endAngle = (CGFloat(self.currentScore / 10.0) * 2.0 * CGFloat(M_PI)) + CGFloat(-M_PI_2)
         let current_path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: current_endAngle, clockwise: true)
         self.graphCurrentShapeLayer.path = current_path.cgPath
+        
+        super.layoutSubviews()
     }
 }
