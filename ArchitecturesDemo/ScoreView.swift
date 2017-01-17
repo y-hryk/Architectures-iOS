@@ -17,14 +17,14 @@ class ScoreView: UIView {
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "8.8"
+        label.text = "0"
         return label
     }()
     
     let graphMaxShapeLayer: CAShapeLayer = {
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = UIColor.lightGray.cgColor
+        shapeLayer.strokeColor = UIColor.RGB(135, 135, 135).cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 3.0
         return shapeLayer
@@ -38,6 +38,9 @@ class ScoreView: UIView {
         shapeLayer.lineWidth = 3.0
         return shapeLayer
     }()
+    
+    var currentScore: Float = 0.0
+    var isAnimated: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +61,6 @@ class ScoreView: UIView {
         self.layer.addSublayer(self.graphCurrentShapeLayer)
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -73,30 +75,43 @@ class ScoreView: UIView {
     
     func startAnimation(score: Float) {
         
+        self.currentScore = score
         let center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
-        let radius = 80.0 / 2.0
+        let radius = self.frame.size.width / 2.0
         let startAngle = CGFloat(-M_PI_2)
-//        let endAngle = (2.0 * CGFloat(M_PI)) * CGFloat((score / 10.0))
-        
-        let endAngle = ((2.0 * CGFloat(M_PI)) + CGFloat(-M_PI_2)) * 0.1
-        let path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        self.graphCurrentShapeLayer.path = path.cgPath
-    }
+        let current_endAngle = (CGFloat(self.currentScore / 10.0) * 2.0 * CGFloat(M_PI)) + CGFloat(-M_PI_2)
+        let current_path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: current_endAngle, clockwise: true)
+        self.graphCurrentShapeLayer.path = current_path.cgPath
+
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+        })
     
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.duration = 0.75
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = kCAFillModeForwards
+        self.graphCurrentShapeLayer.add(animation, forKey: "circleAnim")
+        
+        CATransaction.commit()
+    }
     
     // MARK: Over ride
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
-        let center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0) // 中心座標
-        let radius = 80.0 / 2.0  // 半径
-        let startAngle = CGFloat(-M_PI_2)  // 開始点(真上)
-        let endAngle = 2.0 * CGFloat(M_PI)  // 終了点(開始点から一周)
+        let center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
+        let radius = self.frame.size.width / 2.0
+        let startAngle = CGFloat(-M_PI_2)
+        let endAngle = (2.0 * CGFloat(M_PI)) + CGFloat(-M_PI_2)
         let path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise: true)
         self.graphMaxShapeLayer.path = path.cgPath
         
         
-//        self.graphCurrentShapeLayer.position = center
+        let current_endAngle = (CGFloat(self.currentScore / 10.0) * 2.0 * CGFloat(M_PI)) + CGFloat(-M_PI_2)
+        let current_path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: current_endAngle, clockwise: true)
+        self.graphCurrentShapeLayer.path = current_path.cgPath
     }
 }

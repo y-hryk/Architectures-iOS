@@ -77,10 +77,10 @@ class MovieCell: UICollectionViewCell {
         
         self.scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints([
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .top,      relatedBy: .equal, toItem: self, attribute: .bottom,     multiplier: 1.0, constant: -80 - 10),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .top,      relatedBy: .equal, toItem: self, attribute: .bottom,     multiplier: 1.0, constant: -70 - 10),
             NSLayoutConstraint(item: self.scoreLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing,multiplier: 1.0, constant: -10),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .height,   relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1.0, constant: 80),
-            NSLayoutConstraint(item: self.scoreLabel, attribute: .width,   relatedBy: .equal, toItem: nil, attribute: .width,  multiplier: 1.0, constant: 80)
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .height,   relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1.0, constant: 70),
+            NSLayoutConstraint(item: self.scoreLabel, attribute: .width,   relatedBy: .equal, toItem: nil, attribute: .width,  multiplier: 1.0, constant: 70)
         ])
 
         
