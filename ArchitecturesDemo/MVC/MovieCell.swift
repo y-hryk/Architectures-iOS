@@ -107,6 +107,8 @@ class MovieCell: UICollectionViewCell {
         self.titleLabel.text = data.title
         self.scoreLabel.scoreLabel.text = "\(data.vote_average)"
         self.scoreLabel.startAnimation(score: data.vote_average)
+        
+        self.thumbnaliImage.image = nil
         self.thumbnaliImage.kf.setImage(with: URL(string: APIConfig.IMAGE_BASE_DOMINE_w780 + data.backdrop_path),
                                         placeholder: nil,
                                         options: nil) {[weak self] (image, error, cacheType, url) in

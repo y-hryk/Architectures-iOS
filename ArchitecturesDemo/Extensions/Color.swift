@@ -8,12 +8,6 @@
 
 import UIKit
 
-//public enum GradientType: Integer {
-//    case angle0
-//    case angle45
-//    case angle90
-//}
-
 enum gradient {
     case angle0
     case angle45

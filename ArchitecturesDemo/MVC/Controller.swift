@@ -46,10 +46,6 @@ class Controller: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillLayoutSubviews() {
-        print("viewWillLayoutSubViews")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +61,7 @@ class Controller: UIViewController {
         // 制約を設定
         self.setupConstraints()
         
-        //
+        // 取得
         self.request(control: nil)
     }
     
@@ -92,7 +88,10 @@ class Controller: UIViewController {
         }
         
         self.state = .loading
-        let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=0a06fbb707cb2165dffcd8d27fd04365&page=" + "\(self.currentPage)" + "&sort_by=popularity.desc")!
+        
+        let domain = APIConfig.baseDomain + "/discover/movie"
+        let query = "?api_key=" + APIConfig.accessToken + "&page=" + "\(self.currentPage)" + "&sort_by=popularity.desc"
+        let url = URL(string: domain + query)!
         URLSession.shared.dataTask(with: url) {[weak self] (data, response, error) in
             control?.endRefreshing()
             guard let `self` = self else { return }
@@ -138,6 +137,7 @@ class Controller: UIViewController {
 extension Controller: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return self.movies.count
     }
     
