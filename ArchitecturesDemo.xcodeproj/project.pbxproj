@@ -21,6 +21,7 @@
 		A77B608D1E35CF670003CC61 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B608B1E35CF670003CC61 /* Movie.swift */; };
 		A77B608E1E35CF670003CC61 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B608C1E35CF670003CC61 /* MovieCell.swift */; };
 		A77B60901E35CFFE0003CC61 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B608F1E35CFFE0003CC61 /* SwitchVC.swift */; };
+		A78A28701E37531000E44C57 /* MovieCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A286F1E37531000E44C57 /* MovieCellPresenter.swift */; };
 		A7AB368A1E12B9C8004ACE8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */; };
 		A7AB36911E12B9C8004ACE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36901E12B9C8004ACE8B /* Assets.xcassets */; };
 		A7AB36941E12B9C8004ACE8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */; };
@@ -79,6 +80,7 @@
 		A77B608B1E35CF670003CC61 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A77B608C1E35CF670003CC61 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		A77B608F1E35CFFE0003CC61 /* SwitchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
+		A78A286F1E37531000E44C57 /* MovieCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCellPresenter.swift; sourceTree = "<group>"; };
 		A7AB36861E12B9C8004ACE8B /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7AB36901E12B9C8004ACE8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				A735284C1E35D20A00AB573C /* Controller.swift */,
 				A735284E1E35EADA00AB573C /* Presenter.swift */,
 				A77B608C1E35CF670003CC61 /* MovieCell.swift */,
+				A78A286F1E37531000E44C57 /* MovieCellPresenter.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			files = (
 				A77B608E1E35CF670003CC61 /* MovieCell.swift in Sources */,
 				A77B60771E35CED50003CC61 /* AppDelegate.swift in Sources */,
+				A78A28701E37531000E44C57 /* MovieCellPresenter.swift in Sources */,
 				A77B608D1E35CF670003CC61 /* Movie.swift in Sources */,
 				A77B60781E35CED50003CC61 /* Debuggable.swift in Sources */,
 				A735284F1E35EADA00AB573C /* Presenter.swift in Sources */,

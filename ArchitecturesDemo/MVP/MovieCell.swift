@@ -102,14 +102,16 @@ class MovieCell: UICollectionViewCell {
 
         if datas.isEmpty { return }
         
-        let data = datas[indexPath.row]
+        let model = datas[indexPath.row]
+        let presenter = MovieCellPresenter(model: model)
         
-        self.titleLabel.text = data.title
-        self.scoreLabel.scoreLabel.text = "\(data.vote_average)"
-        self.scoreLabel.startAnimation(score: data.vote_average)
+        self.titleLabel.text = presenter.title
+        self.scoreLabel.scoreLabel.text = presenter.rate
+        
+        self.scoreLabel.startAnimation(score: model.vote_average)
         
         self.thumbnaliImage.image = nil
-        self.thumbnaliImage.kf.setImage(with: URL(string: APIConfig.IMAGE_BASE_DOMINE_w780 + data.backdrop_path),
+        self.thumbnaliImage.kf.setImage(with: URL(string: presenter.url),
                                         placeholder: nil,
                                         options: nil) {[weak self] (image, error, cacheType, url) in
                                             guard let `self` = self else { return }
