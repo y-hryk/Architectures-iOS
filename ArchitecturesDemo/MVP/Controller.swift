@@ -2,19 +2,13 @@
 //  Controller.swift
 //  ArchitecturesDemo
 //
-//  Created by h.yamaguchi on 2017/01/10.
+//  Created by h.yamaguchi on 2017/01/23.
 //  Copyright © 2017年 h.yamaguchi. All rights reserved.
 //
 
 import UIKit
 
 class Controller: UIViewController {
-    
-    fileprivate enum controllerState : String {
-        case content = "Content"
-        case loading = "Loading"
-        case error = "Error"
-    }
     
     fileprivate var collectionView: UICollectionView = {
         
@@ -31,16 +25,16 @@ class Controller: UIViewController {
         
         return collectionView
     }()
-    
-    fileprivate lazy var refreshControl: UIRefreshControl =  {
+
+    fileprivate var refreshControl: UIRefreshControl = {
        
         let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControl
     }()
     
-    fileprivate var movies = [Movie]()
-    fileprivate var currentPage = 1
-    fileprivate var state: controllerState = .content
+    fileprivate var presenter = Presenter()
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,17 +47,16 @@ class Controller: UIViewController {
         self.view.addSubview(self.collectionView)
         
         // Selector setting
-        self.refreshControl.addTarget(self, action: #selector(request(control:)), for: .valueChanged)
         self.collectionView.addSubview(self.refreshControl)
         
         // Delegate & DataSource
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.presenter.delegate = self
         
         // 制約を設定
         self.setupConstraints()
-        // 取得
-        self.request(control: nil)
+        self.presenter.requestMovies()
     }
     
     // MARK: Private
@@ -78,59 +71,26 @@ class Controller: UIViewController {
         ])
     }
     
-    @objc fileprivate func request(control: UIRefreshControl?) {
-        
-        if self.state == .loading { return }
-        
-        if let control = control {
-            self.movies = [Movie]()
-            self.currentPage = 1
-            control.beginRefreshing()
-        }
-        
-        self.state = .loading
-        
-        let domain = APIConfig.baseDomain + "/discover/movie"
-        let query = "?api_key=" + APIConfig.accessToken + "&page=" + "\(self.currentPage)" + "&sort_by=popularity.desc"
-        let url = URL(string: domain + query)!
-        URLSession.shared.dataTask(with: url) {[weak self] (data, response, error) in
-            control?.endRefreshing()
-            guard let `self` = self else { return }
-            guard let data = data else {
-                self.state = .error
-                return
-            }
-            
-            if let responseData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any] {
-                
-                if let results = responseData["results"] as? [[String: Any]] {
-                    
-                    let movies = results.map({ (value) -> Movie in
-                        let movie = Movie()
-                        movie.id            = String(value["id"] as? Int ?? 0)
-                        movie.title         = value["title"] as? String ?? ""
-                        movie.backdrop_path = value["backdrop_path"] as? String ?? ""
-                        movie.vote_average  = value["vote_average"] as? Float ?? 0.0
-                        
-                        return movie
-                    })
-                    
-                    self.movies = self.movies + movies
-                    self.currentPage += 1
-                    self.state = .content
-                   
-                    DispatchQueue.main.async {
-                        NSLog("movies: \(self.movies)")
-                        self.collectionView.reloadData()
-                    }
-                }
-                
-            } else {
-                self.state = .error
-            }
-            
-        }.resume()
+    // MARK: Selector
+    func refresh() {
+        self.refreshControl.beginRefreshing()
+        self.presenter.requestMovies()
     }
+}
+
+// MARK: PresenterDelegate
+extension Controller: PresenterDelegate {
+    
+    func presenterDidChangeControllerStatus(presenter: Presenter, state: Presenter.controllerState) {
+        
+    }
+    
+    func presenterDidFinishRequeset(presenter: Presenter) {
+        
+        self.refreshControl.endRefreshing()
+        self.collectionView.reloadData()
+    }
+    
 }
 
 
@@ -139,7 +99,7 @@ extension Controller: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.movies.count
+        return self.presenter.movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -148,7 +108,7 @@ extension Controller: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.setRowData(datas: self.movies, indexPath: indexPath)
+        cell.setRowData(datas: self.presenter.movies, indexPath: indexPath)
         return cell
     }
 }
@@ -157,7 +117,7 @@ extension Controller: UICollectionViewDataSource {
 extension Controller: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+        
     }
 }
 
@@ -166,10 +126,8 @@ extension Controller: UIScrollViewDelegate
 {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.collectionView.contentOffset.y >= (self.collectionView.contentSize.height - self.collectionView.bounds.size.height) {
-        
-            self.request(control: nil)
+            
+            self.presenter.requestMovies(isNext: true)
         }
     }
 }
-
-
