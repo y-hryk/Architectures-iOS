@@ -11,7 +11,7 @@ import UIKit
 struct SwitchVC {
     
     static func mainController() -> UIViewController {
-        return Controller()
+        return MovieViewController()
     }
 
 }

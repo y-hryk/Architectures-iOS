@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A735284D1E35D20A00AB573C /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735284C1E35D20A00AB573C /* Controller.swift */; };
+		A735284D1E35D20A00AB573C /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735284C1E35D20A00AB573C /* MovieViewController.swift */; };
 		A735284F1E35EADA00AB573C /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735284E1E35EADA00AB573C /* Presenter.swift */; };
 		A77B60771E35CED50003CC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */; };
 		A77B60781E35CED50003CC61 /* Debuggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */; };
@@ -31,9 +31,18 @@
 		A7D12FE71E2CAB7900390CA8 /* Debuggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */; };
 		A7D12FEA1E2CAB9E00390CA8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE91E2CAB9E00390CA8 /* Color.swift */; };
 		A7D12FEC1E2CBDE300390CA8 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */; };
+		A7DE76E11EB06B7000E58086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB36891E12B9C8004ACE8B /* AppDelegate.swift */; };
+		A7DE76E41EB06B7000E58086 /* Debuggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */; };
+		A7DE76E81EB06B7000E58086 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490141E24C6020058B551 /* APIConfig.swift */; };
+		A7DE76E91EB06B7000E58086 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FE91E2CAB9E00390CA8 /* Color.swift */; };
+		A7DE76EA1EB06B7000E58086 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */; };
+		A7DE76EC1EB06B7000E58086 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */; };
+		A7DE76EE1EB06B7000E58086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */; };
+		A7DE76EF1EB06B7000E58086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36901E12B9C8004ACE8B /* Assets.xcassets */; };
+		A7DE76F11EB06B7000E58086 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7F490151E24C6020058B551 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490141E24C6020058B551 /* APIConfig.swift */; };
 		A7F4901D1E24CA360058B551 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901C1E24CA360058B551 /* Movie.swift */; };
-		A7F4901F1E24E9640058B551 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901E1E24E9640058B551 /* Controller.swift */; };
+		A7F4901F1E24E9640058B551 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901E1E24E9640058B551 /* MovieViewController.swift */; };
 		A7F490211E251AA00058B551 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490201E251AA00058B551 /* SwitchVC.swift */; };
 		A7F490231E251BB70058B551 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490221E251BB70058B551 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
@@ -71,10 +80,21 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7DE76F01EB06B7000E58086 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7DE76F11EB06B7000E58086 /* Kingfisher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A735284C1E35D20A00AB573C /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		A735284C1E35D20A00AB573C /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		A735284E1E35EADA00AB573C /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		A77B60881E35CED50003CC61 /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77B608B1E35CF670003CC61 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -93,9 +113,11 @@
 		A7D12FE61E2CAB7900390CA8 /* Debuggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debuggable.swift; sourceTree = "<group>"; };
 		A7D12FE91E2CAB9E00390CA8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		A7DE76F61EB06B7000E58086 /* VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DE76F71EB06B7100E58086 /* MVP copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MVP copy-Info.plist"; path = "/Users/h.yamaguchi/Documents/Architectures-iOS/MVP copy-Info.plist"; sourceTree = "<absolute>"; };
 		A7F490141E24C6020058B551 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		A7F4901C1E24CA360058B551 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		A7F4901E1E24E9640058B551 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		A7F4901E1E24E9640058B551 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		A7F490201E251AA00058B551 /* SwitchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
 		A7F490221E251BB70058B551 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +146,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7DE76EB1EB06B7000E58086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7DE76EC1EB06B7000E58086 /* Kingfisher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -132,7 +162,7 @@
 			children = (
 				A77B608F1E35CFFE0003CC61 /* SwitchVC.swift */,
 				A77B608B1E35CF670003CC61 /* Movie.swift */,
-				A735284C1E35D20A00AB573C /* Controller.swift */,
+				A735284C1E35D20A00AB573C /* MovieViewController.swift */,
 				A735284E1E35EADA00AB573C /* Presenter.swift */,
 				A77B608C1E35CF670003CC61 /* MovieCell.swift */,
 				A78A286F1E37531000E44C57 /* MovieCellPresenter.swift */,
@@ -147,6 +177,7 @@
 				A7AB36881E12B9C8004ACE8B /* ArchitecturesDemo */,
 				A7AB369D1E12B9C8004ACE8B /* ArchitecturesDemoTests */,
 				A7AB36871E12B9C8004ACE8B /* Products */,
+				A7DE76F71EB06B7100E58086 /* MVP copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +187,7 @@
 				A7AB36861E12B9C8004ACE8B /* MVC.app */,
 				A7AB369A1E12B9C8004ACE8B /* ArchitecturesDemoTests.xctest */,
 				A77B60881E35CED50003CC61 /* MVP.app */,
+				A7DE76F61EB06B7000E58086 /* VIPER.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,7 +239,7 @@
 			children = (
 				A7F490201E251AA00058B551 /* SwitchVC.swift */,
 				A7F4901C1E24CA360058B551 /* Movie.swift */,
-				A7F4901E1E24E9640058B551 /* Controller.swift */,
+				A7F4901E1E24E9640058B551 /* MovieViewController.swift */,
 				A7F490221E251BB70058B551 /* MovieCell.swift */,
 			);
 			path = MVC;
@@ -272,6 +304,25 @@
 			productReference = A7AB369A1E12B9C8004ACE8B /* ArchitecturesDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A7DE76DE1EB06B7000E58086 /* VIPER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7DE76F31EB06B7000E58086 /* Build configuration list for PBXNativeTarget "VIPER" */;
+			buildPhases = (
+				A7DE76DF1EB06B7000E58086 /* Sources */,
+				A7DE76EB1EB06B7000E58086 /* Frameworks */,
+				A7DE76ED1EB06B7000E58086 /* Resources */,
+				A7DE76F01EB06B7000E58086 /* Embed Frameworks */,
+				A7DE76F21EB06B7000E58086 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VIPER;
+			productName = ArchitecturesDemo;
+			productReference = A7DE76F61EB06B7000E58086 /* VIPER.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -295,6 +346,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = A7AB36851E12B9C7004ACE8B;
 					};
+					A7DE76DE1EB06B7000E58086 = {
+						DevelopmentTeam = 853S365UM8;
+					};
 				};
 			};
 			buildConfigurationList = A7AB36811E12B9C7004ACE8B /* Build configuration list for PBXProject "ArchitecturesDemo" */;
@@ -312,6 +366,7 @@
 			targets = (
 				A7AB36851E12B9C7004ACE8B /* MVC */,
 				A77B60721E35CED50003CC61 /* MVP */,
+				A7DE76DE1EB06B7000E58086 /* VIPER */,
 				A7AB36991E12B9C8004ACE8B /* ArchitecturesDemoTests */,
 			);
 		};
@@ -340,6 +395,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7DE76ED1EB06B7000E58086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7DE76EE1EB06B7000E58086 /* LaunchScreen.storyboard in Resources */,
+				A7DE76EF1EB06B7000E58086 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +438,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		A7DE76F21EB06B7000E58086 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -387,7 +465,7 @@
 				A77B608D1E35CF670003CC61 /* Movie.swift in Sources */,
 				A77B60781E35CED50003CC61 /* Debuggable.swift in Sources */,
 				A735284F1E35EADA00AB573C /* Presenter.swift in Sources */,
-				A735284D1E35D20A00AB573C /* Controller.swift in Sources */,
+				A735284D1E35D20A00AB573C /* MovieViewController.swift in Sources */,
 				A77B60901E35CFFE0003CC61 /* SwitchVC.swift in Sources */,
 				A77B607A1E35CED50003CC61 /* APIConfig.swift in Sources */,
 				A77B607B1E35CED50003CC61 /* Color.swift in Sources */,
@@ -400,7 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F490231E251BB70058B551 /* MovieCell.swift in Sources */,
-				A7F4901F1E24E9640058B551 /* Controller.swift in Sources */,
+				A7F4901F1E24E9640058B551 /* MovieViewController.swift in Sources */,
 				A7F490211E251AA00058B551 /* SwitchVC.swift in Sources */,
 				A7AB368A1E12B9C8004ACE8B /* AppDelegate.swift in Sources */,
 				A7D12FE71E2CAB7900390CA8 /* Debuggable.swift in Sources */,
@@ -416,6 +494,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AB369F1E12B9C8004ACE8B /* ArchitecturesDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7DE76DF1EB06B7000E58086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7DE76E11EB06B7000E58086 /* AppDelegate.swift in Sources */,
+				A7DE76E41EB06B7000E58086 /* Debuggable.swift in Sources */,
+				A7DE76E81EB06B7000E58086 /* APIConfig.swift in Sources */,
+				A7DE76E91EB06B7000E58086 /* Color.swift in Sources */,
+				A7DE76EA1EB06B7000E58086 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +722,42 @@
 			};
 			name = Release;
 		};
+		A7DE76F41EB06B7000E58086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 853S365UM8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "MVP copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.yhryk.ArchitecturesDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A7DE76F51EB06B7000E58086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 853S365UM8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "MVP copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.yhryk.ArchitecturesDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -667,6 +793,15 @@
 			buildConfigurations = (
 				A7AB36A71E12B9C8004ACE8B /* Debug */,
 				A7AB36A81E12B9C8004ACE8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7DE76F31EB06B7000E58086 /* Build configuration list for PBXNativeTarget "VIPER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7DE76F41EB06B7000E58086 /* Debug */,
+				A7DE76F51EB06B7000E58086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
