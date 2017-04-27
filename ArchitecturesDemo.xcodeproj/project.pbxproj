@@ -40,6 +40,14 @@
 		A7DE76EE1EB06B7000E58086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */; };
 		A7DE76EF1EB06B7000E58086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AB36901E12B9C8004ACE8B /* Assets.xcassets */; };
 		A7DE76F11EB06B7000E58086 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7D12FE01E2CA0A600390CA8 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7DE76FA1EB0704600E58086 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE76F91EB0704600E58086 /* SwitchVC.swift */; };
+		A7DE76FC1EB070E600E58086 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE76FB1EB070E600E58086 /* MovieViewController.swift */; };
+		A7DE76FE1EB079CD00E58086 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE76FD1EB079CD00E58086 /* MovieCell.swift */; };
+		A7DE77001EB07D1900E58086 /* MovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE76FF1EB07D1900E58086 /* MovieRouter.swift */; };
+		A7DE77021EB07D2D00E58086 /* MoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE77011EB07D2D00E58086 /* MoviePresenter.swift */; };
+		A7DE77041EB07D4B00E58086 /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE77031EB07D4B00E58086 /* MovieInteractor.swift */; };
+		A7DE77061EB0846100E58086 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE77051EB0846100E58086 /* Movie.swift */; };
+		A7DE77081EB1E53400E58086 /* MovieContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DE77071EB1E53400E58086 /* MovieContract.swift */; };
 		A7F490151E24C6020058B551 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F490141E24C6020058B551 /* APIConfig.swift */; };
 		A7F4901D1E24CA360058B551 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901C1E24CA360058B551 /* Movie.swift */; };
 		A7F4901F1E24E9640058B551 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4901E1E24E9640058B551 /* MovieViewController.swift */; };
@@ -115,6 +123,14 @@
 		A7D12FEB1E2CBDE300390CA8 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		A7DE76F61EB06B7000E58086 /* VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DE76F71EB06B7100E58086 /* MVP copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MVP copy-Info.plist"; path = "/Users/h.yamaguchi/Documents/Architectures-iOS/MVP copy-Info.plist"; sourceTree = "<absolute>"; };
+		A7DE76F91EB0704600E58086 /* SwitchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
+		A7DE76FB1EB070E600E58086 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		A7DE76FD1EB079CD00E58086 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		A7DE76FF1EB07D1900E58086 /* MovieRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieRouter.swift; sourceTree = "<group>"; };
+		A7DE77011EB07D2D00E58086 /* MoviePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePresenter.swift; sourceTree = "<group>"; };
+		A7DE77031EB07D4B00E58086 /* MovieInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
+		A7DE77051EB0846100E58086 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A7DE77071EB1E53400E58086 /* MovieContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieContract.swift; sourceTree = "<group>"; };
 		A7F490141E24C6020058B551 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		A7F4901C1E24CA360058B551 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A7F4901E1E24E9640058B551 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +218,7 @@
 				A7D12FE51E2CAB7900390CA8 /* Protocols */,
 				A7F4901B1E24CA360058B551 /* MVC */,
 				A77B608A1E35CF670003CC61 /* MVP */,
+				A7DE76F81EB0701200E58086 /* VIPER */,
 				A7AB36901E12B9C8004ACE8B /* Assets.xcassets */,
 				A7AB36921E12B9C8004ACE8B /* LaunchScreen.storyboard */,
 				A7AB36951E12B9C8004ACE8B /* Info.plist */,
@@ -232,6 +249,21 @@
 				A7D12FE91E2CAB9E00390CA8 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7DE76F81EB0701200E58086 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				A7DE76F91EB0704600E58086 /* SwitchVC.swift */,
+				A7DE77071EB1E53400E58086 /* MovieContract.swift */,
+				A7DE77051EB0846100E58086 /* Movie.swift */,
+				A7DE76FB1EB070E600E58086 /* MovieViewController.swift */,
+				A7DE76FD1EB079CD00E58086 /* MovieCell.swift */,
+				A7DE76FF1EB07D1900E58086 /* MovieRouter.swift */,
+				A7DE77011EB07D2D00E58086 /* MoviePresenter.swift */,
+				A7DE77031EB07D4B00E58086 /* MovieInteractor.swift */,
+			);
+			path = VIPER;
 			sourceTree = "<group>";
 		};
 		A7F4901B1E24CA360058B551 /* MVC */ = {
@@ -502,7 +534,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7DE76E11EB06B7000E58086 /* AppDelegate.swift in Sources */,
+				A7DE76FC1EB070E600E58086 /* MovieViewController.swift in Sources */,
+				A7DE77061EB0846100E58086 /* Movie.swift in Sources */,
+				A7DE77041EB07D4B00E58086 /* MovieInteractor.swift in Sources */,
+				A7DE76FE1EB079CD00E58086 /* MovieCell.swift in Sources */,
+				A7DE77021EB07D2D00E58086 /* MoviePresenter.swift in Sources */,
 				A7DE76E41EB06B7000E58086 /* Debuggable.swift in Sources */,
+				A7DE76FA1EB0704600E58086 /* SwitchVC.swift in Sources */,
+				A7DE77001EB07D1900E58086 /* MovieRouter.swift in Sources */,
+				A7DE77081EB1E53400E58086 /* MovieContract.swift in Sources */,
 				A7DE76E81EB06B7000E58086 /* APIConfig.swift in Sources */,
 				A7DE76E91EB06B7000E58086 /* Color.swift in Sources */,
 				A7DE76EA1EB06B7000E58086 /* ScoreView.swift in Sources */,
